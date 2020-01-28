@@ -1,0 +1,227 @@
+<pre>
+1.
+Name: Access token 
+URL: http://flextechdesign.com/elan/api/AccessToken
+Request:{
+  "elan": {
+    "deviceId": "123456"
+  }
+}
+--------Response----------
+{
+  "elan": {
+    "res_code": "1",
+    "res_msg": "Success",
+    "tokenAccess": "c755c0b544c1962101e93d33b011b7573301faab90a59d7fffa57a333515ad50481289030f428128177f3c45af63f2479f1de1c3be5e643024f2edfd3ec6bc7f4c2c039ea1bc2d0b2d3915bfe4f9b320c651be93fdb68a026527f7d27a08bbeac98d785d605782b1dddd8f0a0dba4981d2f66df764cc12dc952f9933e537571bbfcd23b260d24775b2e39a4b212e02e8ededd46da780",
+    "accessId": 4
+  }
++++++++++++++++++++++++++++++++++++++++++
+2. Name: Account login
+URL: http://flextechdesign.com/elan/api/LoginAccount
+Header Request: accessToken => '',packageName => '',accessId => '',deviceId=>''
+Request: {
+  "elan": {
+    "email": "r_ksingh@hotmail.com",
+    "password":"123456",
+    "fcm_id":"748575"
+  }
+}
+----------- Response -----------------
+{
+  "elan": {
+    "res_code": "1",
+    "res_msg": "Success",
+    "userId": "7",
+    "loginId": "5",
+    "name": "Rajesh kumar",
+    "email": "r_ksingh@hotmail.com",
+    "mobileNumber": "9452135246"
+  }
+}
+++++++++++++++++++++++++++++++++++++++++++
+3. Name: forgot password
+URL: http://flextechdesign.com/elan/api/ForgotPassword
+Header Request: packageName => ''
+Request: {
+  "elan": {
+    "email": "r_ksingh@hotmail.com"
+  }
+}
+----------- Response -----------------
+{
+  "elan": {
+    "res_code": "1",
+    "res_msg": "Your password has been send on your email id."
+  }
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++
+4. Name: Support
+URL : http://flextechdesign.com/elan/api/Support
+Header Request: accessToken => '',packageName => '',accessId => '',deviceId=>''
+Request:{
+  "elan": {
+    "userId": "7",
+    "subject": "hello",
+    "message": "i am testing"
+  }
+}
+------------- Response-------------
+{"elan":{"res_code":"1","res_msg":"Your feedback has been successfully submit"}}
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+5. Name: change password
+URL: http://flextechdesign.com/elan/api/ChangePassword
+Header Request: accessToken => '',packageName => '',accessId => '',deviceId=>''
+Request:{
+  "elan": {
+    "userId": "7",
+    "newPassword": "123456",
+    "oldpassword": "1234567"
+  }
+}
+--------- Response -------------
+{"elan":{"res_code":"1","res_msg":"Password has been change successfully"}}
++++++++++++++++++++++++++++++++++++++++++++++++++++
+6. Name: logout account
+URL: http://flextechdesign.com/elan/api/Logout
+Header Request: accessToken => '',packageName => 'edb8d9a04705539e91aa7520fbf37a05',accessId => '',deviceId=>''
+Request: {
+  "elan": {
+    "loginId": "5"
+  }
+}
+-------- Response -------------------
+{"elan":{"res_code":"1","res_msg":"Logged out successfully Done."}}
+++++++++++++++++++++++++++++++++++++++++++++
+7. Name: Update profile
+URL: http://flextechdesign.com/elan/api/UpdateProfile
+Header Request: accessToken => '',packageName => '',accessId => '',deviceId=>''
+Request: {
+  "elan": {
+    "userId": "7",
+    "name":"alok singh",
+    "mobile":"78545825456"
+  }
+}
+------------ Response----------------
+{"elan":{"res_code":"1","res_msg":"Profile has been update successfully"}}
+++++++++++++++++++++++++++++++++++++++++++++
+8. Name: Get project list
+URL: http://flextechdesign.com/elan/api/ProjectList
+Header Request: accessToken => '',packageName => '',accessId => '',deviceId=>''
+Request: {
+  "elan": {
+    "userId": "7",
+    "offset":"0"
+  }
+}
+
+++++++++++++++++++++++++++++++++++++++++++++
+9. Name: Get job list
+URL: http://flextechdesign.com/elan/api/Jobs
+Header Request: accessToken => '',packageName => '',accessId => '',deviceId=>''
+TYPE: 1 => Add New Job,2 => Update job, 3 => Delete job, 4=> Get Jobs list
+Request:{
+  "elan": {
+    "type": "",
+    "project_id":"",
+    "user_id":"",
+    "offset":"",
+    "job_id":"",
+  }
+}
+++++++++++++++++++++++++++++++++++++++++++++
+10. Name: upload file 
+URL: http://flextechdesign.com/elan/api/UploadFile
+File name: uploaded_file
+++++++++++++++++++++++++++++++++++++++++++++
+11. Name: Get all job list
+URL: http://flextechdesign.com/elan/api/JobList
+Header Request: accessToken => '',packageName => '',accessId => '',deviceId=>''
+Request: {
+  "elan": {
+    "user_id": "1",
+    "offset": "1"
+  }
+}
+------------- Response -----------------
+{"elan":{"res_code":"1","res_msg":"Success","data":[{"id":"1","job_name":"c1","projetc_id":"1","user_id":"1","delivery_date":"","add_date":"1548705872","modify_date":"1548705872","status":"1"}],"offset":2}}
+++++++++++++++++++++++++++++++++++++++++++++
+12. Name: send job
+URL: http://flextechdesign.com/elan/api/SendJob
+Header Request: accessToken => '',packageName => '',accessId => '',deviceId=>''
+Request:{
+  "elan": {
+    "job_id":"1",
+    "user_id":"1",
+    "delivery_date":"12-04-2019"
+  }
+}
+++++++++++++++++++++++++++++++++++++++++++++
+11. Name: upload file 
+URL: http://flextechdesign.com/elan/api/PdfSend
+Header Request: accessToken => '',packageName => '',accessId => '',deviceId=>''
+Request: {
+  "elan": {
+    "job_id": "1",
+    "pdf_id": "17",
+    "user_id": "1",
+    "pos": "32",
+    "dikte": "45",
+    "bin": "75",
+    "mat": "58",
+    "afw": "47",
+    "st": "52",
+    "length": "87",
+    "kl": "54",
+    "images": "",
+    "jsonData": [
+      {
+        "project_id": "2",
+        "project_name": "New Test",
+        "projetc_number": "501-093",
+        "job_id": "44",
+        "job_name": "A44",
+        "delivery_date": "",
+        "add_date": "1551294068"
+      },
+      {
+        "project_id": "2",
+        "project_name": "New Test",
+        "projetc_number": "501-093",
+        "job_id": "43",
+        "job_name": "A43",
+        "delivery_date": "",
+        "add_date": "1551294066"
+      },
+      {
+        "project_id": "2",
+        "project_name": "New Test",
+        "projetc_number": "501-093",
+        "job_id": "42",
+        "job_name": "A42",
+        "delivery_date": "",
+        "add_date": "1551294061"
+      },
+      {
+        "project_id": "2",
+        "project_name": "New Test",
+        "projetc_number": "501-093",
+        "job_id": "41",
+        "job_name": "A41",
+        "delivery_date": "",
+        "add_date": "1551294014"
+      }
+    ]
+  }
+}
+++++++++++++++++++++++++++++++++++++++++++++
+12. Name: Delete pdf 
+URL: http://flextechdesign.com/elan/api/DeletePdf
+Header Request: accessToken => '',packageName => '',accessId => '',deviceId=>''
+Request:{
+  "elan": {
+    "pdf_id":"1"
+  }
+}
+</pre>

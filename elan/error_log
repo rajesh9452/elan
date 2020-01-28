@@ -1,0 +1,2 @@
+[04-Apr-2019 00:57:28 Asia/Kolkata] PHP Fatal error:  Constant expression contains invalid operations in /home/jzurqxtap4d7/public_html/elan/application/libraries/M_pdf.php on line 10
+[04-Apr-2019 02:02:06 Asia/Kolkata] PHP Fatal error:  require(): Failed opening required '/home/jzurqxtap4d7/public_html/elan/application/controllers/api/vendor/autoload.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/jzurqxtap4d7/public_html/elan/application/controllers/api/SendJob.php on line 19
